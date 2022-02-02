@@ -1,14 +1,12 @@
 {
-  "name": "@nextechlabs-libs/nexdex-swap-core",
-  "description": "🎛 Core contracts for the pancake protocol",
+  "name": "@nextechlabs/nexdex-swap-core",
+  "description": "🎛 Core contracts for the nex protocol",
   "version": "0.1.0",
   "homepage": "https://nexdex.finance",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nextechlabs/nexdex-swap-core.git"
-  },
+  "repository": "git@github.com:nextechlabs/nexdex-swap-core.git",
   "publishConfig": {
-    "registry": "http://registry.npmjs.org"
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "contracts",
@@ -38,7 +36,7 @@
     "precompile": "yarn clean",
     "compile": "waffle .waffle.json",
     "pretest": "yarn compile",
-    "test": "NODE_OPTIONS=--openssl-legacy-provider mocha",
+    "test": "mocha",
     "prepublishOnly": "yarn test"
   },
   "license": "GPL-3.0-or-later",
