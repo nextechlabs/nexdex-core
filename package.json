@@ -1,9 +1,9 @@
 {
-  "name": "@nextechlabs/nexdex-swap-core",
+  "name": "@nextechlabs/nexdex-core",
   "description": "🎛 Core contracts for the nex protocol",
   "version": "0.1.0",
   "homepage": "https://nexdex.finance",
-  "repository": "git@github.com:nextechlabs/nexdex-swap-core.git",
+  "repository": "git@github.com:nextechlabs/nexdex-core.git",
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com"
