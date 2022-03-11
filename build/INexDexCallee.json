@@ -1,7 +1,6 @@
 {
   "abi": [
     {
-      "constant": false,
       "inputs": [
         {
           "internalType": "address",
@@ -26,7 +25,6 @@
       ],
       "name": "nexdexCall",
       "outputs": [],
-      "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     }
@@ -39,16 +37,16 @@
       "sourceMap": ""
     },
     "deployedBytecode": {
+      "immutableReferences": {},
       "linkReferences": {},
       "object": "",
       "opcodes": "",
       "sourceMap": ""
     }
   },
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount1\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"nexdexCall\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/INexDexCallee.sol\":\"INexDexCallee\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":999999},\"remappings\":[]},\"sources\":{\"contracts/interfaces/INexDexCallee.sol\":{\"keccak256\":\"0x29b7ded9e9630ad42c7289fe13a501cee57b499b4d277eca9b9fca779955d7cd\",\"urls\":[\"bzz-raw://5103eee7a1523efbd3aa8d9b0866ac3042ee1b843e5e2b70e68120c88c808304\",\"dweb:/ipfs/QmVBVNxdWwjv1Rny3cnmCDayjS44tu2wFbBEHZMnqwrpE6\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount1\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"nexdexCall\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/INexDexCallee.sol\":\"INexDexCallee\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":999999},\"remappings\":[]},\"sources\":{\"contracts/interfaces/INexDexCallee.sol\":{\"keccak256\":\"0x29b7ded9e9630ad42c7289fe13a501cee57b499b4d277eca9b9fca779955d7cd\",\"urls\":[\"bzz-raw://5103eee7a1523efbd3aa8d9b0866ac3042ee1b843e5e2b70e68120c88c808304\",\"dweb:/ipfs/QmVBVNxdWwjv1Rny3cnmCDayjS44tu2wFbBEHZMnqwrpE6\"]}},\"version\":1}",
   "interface": [
     {
-      "constant": false,
       "inputs": [
         {
           "internalType": "address",
@@ -73,7 +71,6 @@
       ],
       "name": "nexdexCall",
       "outputs": [],
-      "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     }

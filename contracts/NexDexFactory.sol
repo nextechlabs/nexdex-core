@@ -1,16 +1,16 @@
-pragma solidity =0.5.16;
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity =0.6.12;
 
 import './interfaces/INexDexFactory.sol';
 import './NexDexPair.sol';
 
 contract NexDexFactory is INexDexFactory {
-    bytes32 public constant INIT_CODE_PAIR_HASH = keccak256(abi.encodePacked(type(NexDexPair).creationCode));
+    address public override feeTo;
+    address public override feeToSetter;
 
-    address public feeTo;
-    address public feeToSetter;
-
-    mapping(address => mapping(address => address)) public getPair;
-    address[] public allPairs;
+    mapping(address => mapping(address => address)) public override getPair;
+    address[] public override allPairs;
 
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
 
@@ -18,11 +18,15 @@ contract NexDexFactory is INexDexFactory {
         feeToSetter = _feeToSetter;
     }
 
-    function allPairsLength() external view returns (uint) {
+    function allPairsLength() external override view returns (uint) {
         return allPairs.length;
     }
 
-    function createPair(address tokenA, address tokenB) external returns (address pair) {
+    function pairCodeHash() external pure returns (bytes32) {
+        return keccak256(type(NexDexPair).creationCode);
+    }
+
+    function createPair(address tokenA, address tokenB) external override returns (address pair) {
         require(tokenA != tokenB, 'NexDex: IDENTICAL_ADDRESSES');
         (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
         require(token0 != address(0), 'NexDex: ZERO_ADDRESS');
@@ -32,20 +36,21 @@ contract NexDexFactory is INexDexFactory {
         assembly {
             pair := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
-        INexDexPair(pair).initialize(token0, token1);
+        NexDexPair(pair).initialize(token0, token1);
         getPair[token0][token1] = pair;
         getPair[token1][token0] = pair; // populate mapping in the reverse direction
         allPairs.push(pair);
         emit PairCreated(token0, token1, pair, allPairs.length);
     }
 
-    function setFeeTo(address _feeTo) external {
+    function setFeeTo(address _feeTo) external override {
         require(msg.sender == feeToSetter, 'NexDex: FORBIDDEN');
         feeTo = _feeTo;
     }
 
-    function setFeeToSetter(address _feeToSetter) external {
+    function setFeeToSetter(address _feeToSetter) external override {
         require(msg.sender == feeToSetter, 'NexDex: FORBIDDEN');
         feeToSetter = _feeToSetter;
     }
+
 }

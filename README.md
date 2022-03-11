@@ -1,6 +1,6 @@
 # NEX Factory
 
-[![Actions Status](https://github.com/nextechlabs/nexdex-swap-core/workflows/CI/badge.svg)](https://github.com/nextechlabs/nexdex-swap-core/actions)
+[![Actions Status](https://github.com/nextechlabs/nexdex-core/workflows/CI/badge.svg)](https://github.com/nextechlabs/nexdex-core/actions)
 
 In-depth documentation on NexDex is available at [docs.nexdex.finance](https://docs.nexdex.finance/).
 

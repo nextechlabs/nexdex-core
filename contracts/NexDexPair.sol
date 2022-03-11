@@ -1,6 +1,5 @@
-pragma solidity =0.5.16;
+pragma solidity =0.6.12;
 
-import './interfaces/INexDexPair.sol';
 import './NexDexERC20.sol';
 import './libraries/Math.sol';
 import './libraries/UQ112x112.sol';
@@ -8,7 +7,7 @@ import './interfaces/IERC20.sol';
 import './interfaces/INexDexFactory.sol';
 import './interfaces/INexDexCallee.sol';
 
-contract NexDexPair is INexDexPair, NexDexERC20 {
+contract NexDexPair is NexDexERC20 {
     using SafeMath  for uint;
     using UQ112x112 for uint224;
 

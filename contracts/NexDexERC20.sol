@@ -1,12 +1,13 @@
-pragma solidity =0.5.16;
+// SPDX-License-Identifier: GPL-3.0
 
-import './interfaces/INexDexERC20.sol';
+pragma solidity =0.6.12;
+
 import './libraries/SafeMath.sol';
 
-contract NexDexERC20 is INexDexERC20 {
+contract NexDexERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'NexDex LPs';
+    string public constant name = 'XP LP Token';
     string public constant symbol = 'XP-LP';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
@@ -24,7 +25,7 @@ contract NexDexERC20 is INexDexERC20 {
     constructor() public {
         uint chainId;
         assembly {
-            chainId := chainid
+            chainId := chainid()
         }
         DOMAIN_SEPARATOR = keccak256(
             abi.encode(
